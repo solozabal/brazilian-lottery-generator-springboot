@@ -5,9 +5,8 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-%23336791.svg?&style=flat&logo=postgresql&logoColor=white)
 ![Build](https://img.shields.io/badge/build-passing-success)
 ![License](https://img.shields.io/github/license/solozabal/brazilian-lottery-generator-springboot)
-<br>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/solozabal/brazilian-lottery-generator-springboot/main/assets/lottery-banner.png" alt="Brazilian Lottery Banner" style="max-width: 100%; height: auto;">
+<img src="https://raw.githubusercontent.com/solozabal/brazilian-lottery-generator-springboot/main/assets/lottery-banner.png" width="900" alt="Brazilian Lottery Banner">
 </p>
 
 Welcome to the **Brazilian Lottery Bet Generator**, an open source project built with Java & Spring Boot!  

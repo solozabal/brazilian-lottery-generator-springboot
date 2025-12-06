@@ -1,97 +1,151 @@
-```
-# Gerador de Apostas
+# 🎲 Brazilian Lottery Bet Generator
 
-Este é um projeto Spring Boot para um sistema chamado "Gerador de Apostas". O sistema permite que os usuários gerem números aleatórios para os seguintes jogos de loteria: Mega Sena, Quina e LotoFácil.
+![Java](https://img.shields.io/badge/Java-11%2B-blue.svg)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-2.7-brightgreen.svg)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-%23336791.svg?&style=flat&logo=postgresql&logoColor=white)
+![Build](https://img.shields.io/badge/build-passing-success)
+![License](https://img.shields.io/github/license/solozabal/brazilian-lottery-generator-springboot)
+<br>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/solozabal/brazilian-lottery-generator-springboot/main/assets/lottery-banner.png" alt="Brazilian Lottery Banner" style="max-width: 100%; height: auto;">
+</p>
 
-## Funcionalidades
+Welcome to the **Brazilian Lottery Bet Generator**, an open source project built with Java & Spring Boot!  
+Effortlessly generate bets for the main Brazilian lottery games: **Mega Sena**, **Quina**, and **LotoFácil**.  
+Designed for both fun and learning, this project demonstrates professional use of modern Java frameworks, clean architecture and an appealing interface.
 
-- **Mega Sena**: O usuário deve escolher 6 números entre 1 e 60. Pode ainda deixar que o sistema escolha os números para você por meio da Surpresinha.
-- **Quina**: O usuário deve escolher 5 números entre 1 e 80. Pode ainda deixar que o sistema escolha os números para você por meio da Surpresinha.
-- **LotoFácil**: O usuário marca entre 15 e 20 números, dentre os 25 disponíveis no volante, e fatura prêmio se acertar 11, 12, 13, 14 ou 15 números. Pode ainda deixar que o sistema escolha os números para você por meio da Surpresinha.
+---
 
-## Tecnologias Utilizadas
+## 🧩 Features
 
-- Java
-- Spring Boot
-- Spring Data JPA
-- PostgreSQL
-- Thymeleaf
-- Bootstrap
+- **Mega Sena:**  
+  Select 6 numbers from 1 to 60, or let the system surprise you with a random selection ("Surpresinha").
+- **Quina:**  
+  Select 5 numbers between 1 and 80. Or use the automatic randomizer.
+- **LotoFácil:**  
+  Pick between 15 and 20 numbers from a set of 25. Win by matching 11 to 15 numbers!  
+  Random selection supported as well.
+- Fully responsive UI with **Thymeleaf** and **Bootstrap**.
+- Clean separation of concerns (Controller, Service, Model, Repository).
+- Built-in support for **PostgreSQL** database.
 
-## Pré-requisitos
+---
 
-- Java 11 ou superior
-- Maven
-- PostgreSQL
+## 🚀 Tech Stack
 
-## Configuração do Banco de Dados
+- [Java 11+](https://www.java.com/)
+- [Spring Boot](https://spring.io/projects/spring-boot)
+- [Spring Data JPA](https://spring.io/projects/spring-data-jpa)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Thymeleaf (HTML templates)](https://www.thymeleaf.org/)
+- [Bootstrap](https://getbootstrap.com/)
 
-Certifique-se de que o PostgreSQL está instalado e rodando. Crie um banco de dados chamado `gerador_de_apostas`.
+---
+
+## ⚙️ Getting Started
+
+### Prerequisites
+
+- **Java 11** or newer
+- **Maven**
+- **PostgreSQL** (running locally or in the cloud)
+
+### Database Setup
+
+Ensure PostgreSQL is installed and running.  
+Create the new database:
 
 ```sql
 CREATE DATABASE gerador_de_apostas;
 ```
 
-Atualize o arquivo `src/main/resources/application.properties` com suas credenciais do PostgreSQL:
+Update your `src/main/resources/application.properties` with your PostgreSQL credentials:
 
 ```properties
 spring.datasource.url=jdbc:postgresql://localhost:5432/gerador_de_apostas
-spring.datasource.username=seu_usuario
-spring.datasource.password=sua_senha
+spring.datasource.username=your_postgres_user
+spring.datasource.password=your_postgres_password
 spring.jpa.hibernate.ddl-auto=update
 ```
 
-## Executando a Aplicação
+### Running the Application
 
-Clone o repositório:
+Clone the repository:
 
 ```bash
-git clone https://github.com/solozabal/gerador-de-apostas.git
-cd gerador-de-apostas
+git clone https://github.com/solozabal/brazilian-lottery-generator-springboot.git
+cd brazilian-lottery-generator-springboot
 ```
 
-Compile e execute a aplicação:
+Build and run the application:
 
 ```bash
 ./mvnw spring-boot:run
 ```
 
-## Acesse a Aplicação no Navegador
+Visit the app in your browser:
 
-Abra seu navegador e acesse:
-
-```
+```text
 http://localhost:8080
 ```
 
-## Estrutura do Projeto
+---
+
+## 🗂 Project Structure
 
 ```plaintext
 src/main/java/com/example/geradordeapostas/gerador_de_apostas
-├── GeradorDeApostasApplication.java       // Classe principal da aplicação.
-├── controller/JogoController.java          // Controlador para gerenciar as requisições relacionadas aos jogos.
-├── model/Jogo.java                         // Entidade JPA que representa um jogo.
-├── repository/JogoRepository.java          // Repositório JPA para a entidade Jogo.
-└── service/JogoService.java                // Serviço que contém a lógica de negócio para gerar os números dos jogos.
+├── GeradorDeApostasApplication.java       // Main Spring Boot application class
+├── controller/JogoController.java         // Handles HTTP requests for lottery games
+├── model/Jogo.java                        // JPA Entity for game data
+├── repository/JogoRepository.java         // JPA Repository for game persistence
+└── service/JogoService.java               // Business logic for bet generation
 
 src/main/resources
-├── application.properties                   // Configurações da aplicação.
-└── templates/index.html                     // Página inicial da aplicação.
+├── application.properties                 // Application configuration
+└── templates/index.html                   // Main Thymeleaf HTML page
 ```
 
-## Contribuindo
+---
 
-1. Faça um fork do projeto.
-2. Crie uma branch para sua feature:
+## 🤝 Contributing
+
+We welcome contributions from everyone! 🚀
+
+1. Fork this repo
+2. Create a feature branch:
    ```bash
-   git checkout -b feature/nova-feature
+   git checkout -b feature/amazing-feature
    ```
-3. Commit suas mudanças:
+3. Commit your changes:
    ```bash
-   git commit -am 'Adiciona nova feature'
+   git commit -am 'Add some amazing feature'
    ```
-4. Faça o push para a branch:
+4. Push to your branch:
    ```bash
-   git push origin feature/nova-feature
+   git push origin feature/amazing-feature
    ```
-5. Crie um novo Pull Request.
+5. Open a Pull Request!
+
+---
+
+## 🌎 Why This Project?
+
+- **Showcase your Java and Spring Boot skills in your portfolio!**
+- Clear demonstration of backend–frontend integration with Thymeleaf and Bootstrap.
+- Hands-on example of deploying a Java web project with PostgreSQL.
+- Great for technical interviews, take-home challenges, or teaching MVC and database integration.
+
+---
+
+## 💡 License
+
+This project is licensed under the MIT License.
+
+---
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/pedrosolozabal/">
+    <img src="https://img.shields.io/badge/Pedro%20Solozabal-LinkedIn-blue?logo=linkedin&logoColor=white&style=for-the-badge" alt="Pedro Solozabal on LinkedIn">
+  </a>
+</p>

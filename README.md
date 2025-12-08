@@ -137,9 +137,9 @@ We welcome contributions from everyone! 🚀
 
 ---
 
-## 💡 License
+## 📄 License
 
-This project is licensed under the MIT License.
+Licensed under the [MIT License](LICENSE).
 
 ---
 
